@@ -47,45 +47,45 @@ w.grid(row = 2, column = 0,
 
 w.bind('<B1-Motion>',paint)
 
-#цвета
-colors = Button(text="Цвета",width=10,
+#Г¶ГўГҐГІГ 
+colors = Button(text="Г–ГўГҐГІГ ",width=10,
 	command=lambda: color_change('black'))
 colors.grid(row=0,column=1)	
 
-green_btn = Button(text='Зелёный',width=10,
+green_btn = Button(text='Г‡ГҐГ«ВёГ­Г»Г©',width=10,
  command=lambda: color_change('green'))
 green_btn.grid(row=0, column=5)
 
-red_btn = Button(text='Красный',width=10,
+red_btn = Button(text='ГЉГ°Г Г±Г­Г»Г©',width=10,
  command=lambda: color_change('red'))
 red_btn.grid(row=0, column=2)
 
-blue_btn = Button(text='Синий',width=10,
+blue_btn = Button(text='Г‘ГЁГ­ГЁГ©',width=10,
  command=lambda: color_change('blue'))
 blue_btn.grid(row=0, column=7)
 
-orange_btn = Button(text='Оранжевый',width=10,
+orange_btn = Button(text='ГЋГ°Г Г­Г¦ГҐГўГ»Г©',width=10,
  command=lambda: color_change('orange'))
 orange_btn.grid(row=0, column=3)
 
-yellow_btn = Button(text='Жёлтый',width=10,
+yellow_btn = Button(text='Г†ВёГ«ГІГ»Г©',width=10,
  command=lambda: color_change('yellow'))
 yellow_btn.grid(row=0, column=4)
 
-goluboy_btn = Button(text='Голубой',width=10,
+goluboy_btn = Button(text='ГѓГ®Г«ГіГЎГ®Г©',width=10,
  command=lambda: color_change('#00FFFF'))
 goluboy_btn.grid(row=0, column=6)
 
-Purple_btn = Button(text='Фиолетовый',width=10,
+Purple_btn = Button(text='Г”ГЁГ®Г«ГҐГІГ®ГўГ»Г©',width=10,
  command=lambda: color_change('#800080'))
 Purple_btn.grid(row=0, column=8)
 
-clear_btn = Button(text="Очистить",width=10,
+clear_btn = Button(text="ГЋГ·ГЁГ±ГІГЁГІГј",width=10,
 	command=lambda: w.delete('all'))
 clear_btn.grid(row=3, column=4)
 
-#кисти
-size = Button(text="размер кисти",width=10)
+#ГЄГЁГ±ГІГЁ
+size = Button(text="Г°Г Г§Г¬ГҐГ° ГЄГЁГ±ГІГЁ",width=10)
 size.grid(row=1,column=1)	
 
 
