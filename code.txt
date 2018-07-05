@@ -1,0 +1,132 @@
+from tkinter import *
+
+canvas_width = 2000
+canvas_height = 600
+brush_size = 6
+color = "black"
+
+def paint(event):
+	global brush_size
+	global color
+	x1 = event.x - brush_size
+	x2 = event.x + brush_size
+	y1 = event.y - brush_size
+	y2 = event.y + brush_size
+	w.create_oval(x1,y1,x2,y2,
+		fill = color, outline = color)
+
+def clean(event):
+	global brush_size
+	global color
+	x1 = event.x - brush_size
+	x2 = event.x + brush_size
+	y1 = event.y - brush_size
+	y2 = event.y + brush_size
+	w.create_oval(x1,y1,x2,y2,
+		fill = 'white', outline = 'white')
+
+def brish_size_change(new_size):
+	global brush_size 
+	brush_size = new_size
+
+def color_change(new_color):
+	global color
+	color = new_color
+
+
+root = Tk()
+root.title("Paint")
+
+w = Canvas(root,width=200,
+	height=canvas_height,
+	bg='white')
+
+w.grid(row = 2, column = 0,
+	columnspan = 7,padx = 5,
+	pady = 5, sticky = E+W+S+N)
+
+w.bind('<B1-Motion>',paint)
+
+#цвета
+colors = Button(text="Цвета",width=10,
+	command=lambda: color_change('black'))
+colors.grid(row=0,column=1)	
+
+green_btn = Button(text='Зелёный',width=10,
+ command=lambda: color_change('green'))
+green_btn.grid(row=0, column=5)
+
+red_btn = Button(text='Красный',width=10,
+ command=lambda: color_change('red'))
+red_btn.grid(row=0, column=2)
+
+blue_btn = Button(text='Синий',width=10,
+ command=lambda: color_change('blue'))
+blue_btn.grid(row=0, column=7)
+
+orange_btn = Button(text='Оранжевый',width=10,
+ command=lambda: color_change('orange'))
+orange_btn.grid(row=0, column=3)
+
+yellow_btn = Button(text='Жёлтый',width=10,
+ command=lambda: color_change('yellow'))
+yellow_btn.grid(row=0, column=4)
+
+goluboy_btn = Button(text='Голубой',width=10,
+ command=lambda: color_change('#00FFFF'))
+goluboy_btn.grid(row=0, column=6)
+
+Purple_btn = Button(text='Фиолетовый',width=10,
+ command=lambda: color_change('#800080'))
+Purple_btn.grid(row=0, column=8)
+
+clear_btn = Button(text="Очистить",width=10,
+	command=lambda: w.delete('all'))
+clear_btn.grid(row=3, column=4)
+
+#кисти
+size = Button(text="размер кисти",width=10)
+size.grid(row=1,column=1)	
+
+
+five_btn = Button(text="5",width=10,
+	command=lambda: brish_size_change(5))
+five_btn.grid(row=1,column=3)	
+
+two_btn = Button(text="2",width=10,
+	command=lambda: brish_size_change(2))
+two_btn.grid(row=1,column=2)	
+
+seven_btn = Button(text="7",width=10,
+	command=lambda: brish_size_change(7))
+seven_btn.grid(row=1,column=4)
+
+ten_btn = Button(text="10",width=10,
+	command=lambda: brish_size_change(10))
+ten_btn.grid(row=1,column=5)	
+
+twenty_btn = Button(text="20",width=10,
+	command=lambda: brish_size_change(20))
+twenty_btn.grid(row=1,column=6)	
+
+fifty_btn = Button(text="50",width=10,
+	command=lambda: brish_size_change(50))
+fifty_btn.grid(row=1,column=7)	
+
+hundred_btn = Button(text="100",width=10,
+	command=lambda: brish_size_change(100))
+hundred_btn.grid(row=1,column=8)	
+
+
+
+
+w.bind('<B3-Motion>',clean)
+
+
+
+w.columnconfigure(6,weight=1)
+w.rowconfigure(2, weight = 1)
+
+
+
+root.mainloop()
